@@ -39,21 +39,26 @@ class Node:
 
 class FileSystem:
     def mkdir(self):
+        #makes a new file in the tree
         pass
 
     def rm(self):
         pass
 
     def touch(self):
+        #makes a node within the tree
         pass
 
     def ls(self):
+        #lists the tree label
         pass
 
     def cd(self):
+        #goes into the tree and retains state
         pass
 
     def cp(self):
+        #copies the the tree and contents and dupicates
         pass
 
     def mv(self):
