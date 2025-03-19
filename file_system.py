@@ -1,73 +1,41 @@
-import asyncio, threading
+from tree import Tree as t
+from linked_list import LinkedList as lst
 
-class Tree:
-    def __init__(self, label, branches=[]):
-        self.label = label
-        for branch in branches:
-            assert isinstance(branch, Tree)
-        self.branches = list(branches)
-
-    def is_leaf(self):
-        return not self.branches
-    
-    def __repr__(self):
-        if self.branches:
-            branch_str = ', ' + repr(self.branches)
-        else:
-            branch_str = ''
-        return f'Tree({self.label}{self.branches})'
-
-    def  __str__(self):
-
-        def indented(self):
-            lines = []
-            for b in self.branches:
-                for line in indented(b):
-                    lines.append(' ' + line)
-            return [str(self.label)] + lines
-    
-        return '\n'.join(indented(self))
-    
-
-class Node:
-    #node will be a document or thing in the file
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-        self.prev = None
-
+   
 
 class FileSystem:
-    def mkdir(self):
+    def mkdir(t, file_name):
         #makes a new file in the tree
-        pass
+        if t.label == file_name:
+            raise Exception("File Exists")
+        else:
+            new_file = t.label + str(file_name)
+            return str(new_file)
 
-    def rm(self):
-        pass
 
-    def touch(self):
+    def rm(t, lst):
+        #go into the tree and delete a file
+        pass
+    def touch(lst):
         #makes a node within the tree
         pass
 
-    def ls(self):
+    def ls(t):
         #lists the tree label
         pass
 
-    def cd(self):
+    def cd(t):
         #goes into the tree and retains state
         pass
 
-    def cp(self):
+    def cp(t, lst):
         #copies the the tree and contents and dupicates
         pass
 
-    def mv(self):
+    def mv(t, lst):
         pass
 
-    def find(self):
-        pass
-
-    def cat(self):
+    def find(t, lst):
         pass
 
 
